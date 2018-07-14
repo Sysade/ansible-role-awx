@@ -1,2 +1,34 @@
 
 https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/
+
+https://www.andrehotzler.de/en/blog/technology/50-install-awx-ansible-on-debian-stretch.html
+
+#install some basic software
+apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common dirmngr git python-pip
+
+#add Ansible PPA Repository
+add-apt-repository  "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main"
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+
+#add Docker CE Repository
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+#update package lists
+apt update
+
+#install Ansivble 
+apt install ansible docker-ce
+apt auto-remove
+
+#install docker-py
+pip install docker-py
+
+#clone awx
+cd /tmp/
+git clone https://github.com/ansible/awx
+
+#configure installer
+cd awx/installer
+
+ansible-playbook install.yml - inventory
