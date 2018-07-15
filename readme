@@ -1,4 +1,26 @@
 
+vagrant:
+##############################
+
+ . From a shell
+
+ansible-galaxy install geerlingguy.repo-epel
+git clone https://github.com/rhysmeister/AWX-on-CentOS-7
+cd AWX-on-CentOS-7
+vagrant up
+
+2. Access url http://http://192.168.4.111/
+
+3. Login with;
+
+u: admin
+p: password
+
+Read more: youdidwhatwithtsql.com » Blog Archive » AWX installation using Vagrant and Ansible http://www.youdidwhatwithtsql.com/awx-installation-vagrant-ansible/2340/#ixzz5LKUlf3tv
+
+http://www.youdidwhatwithtsql.com/awx-installation-vagrant-ansible/2340/
+#########################################################
+
 https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/
 
 https://www.andrehotzler.de/en/blog/technology/50-install-awx-ansible-on-debian-stretch.html
